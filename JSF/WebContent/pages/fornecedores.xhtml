@@ -75,13 +75,16 @@
 			<h:form id="frmfornovo">
 				<h:panelGrid id="pnfornovo" columns="2">
 					<p:outputLabel value="Descrição: " />
-					<h:inputText size="30" maxlength="50" value="#{MBFornecedores.fornecedores.descricao}" />
+					<h:inputText size="30" maxlength="50" value="#{MBFornecedores.fornecedores.descricao}" 
+						required="true"
+						/>
 				</h:panelGrid>
 
 				<h:panelGrid columns="2">
 					<p:commandButton value="Gravar" actionListener="#{MBFornecedores.novo}" 
 					oncomplete="PF('dlgfornovo').hide(); PF('tabelaFornecedores').clearFilters();" 
 					update=":frmfornecedores:tbfornecedores :msgGlobal"
+					validateClient="true"
 					/>
 					<p:commandButton value="Cancelar"
 						onclick="PF('dlgfornovo').hide();" />
@@ -127,13 +130,14 @@
 					<h:outputText value="#{MBFornecedores.fornecedores.codigo}" />
 
 					<h:outputText value="Descrição" />
-					<h:inputText value="#{MBFornecedores.fornecedores.descricao}" />
+					<h:inputText value="#{MBFornecedores.fornecedores.descricao}" 
+						required="true"/>
 				</h:panelGrid>
 				
 				<h:panelGrid columns="2">
 					<p:commandButton value="Editar" actionListener="#{MBFornecedores.editar}"
 						oncomplete="PF('dlgforEditar').hide(); PF('tabelaFornecedores').clearFilters();"
-						update=":frmfornecedores:tbfornecedores :msgGlobal" />
+						update=":frmfornecedores:tbfornecedores :msgGlobal" validateClient="true"/>
 
 					<p:commandButton value="Cancelar" 
 						onclick="PF('dialogFornecedorEditar').hide(); PF('tabelaFornecedores').clearFilters();" />
