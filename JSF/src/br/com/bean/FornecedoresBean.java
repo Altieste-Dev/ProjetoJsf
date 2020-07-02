@@ -102,10 +102,10 @@ private Fornecedores fornecedores;
 			
 			itens = dao.listar();
 			
-			JSFUtil.adicionarMensagemSucesso("Fornecedor Exclu�do com Sucesso!");
+			JSFUtil.adicionarMensagemSucesso("Fornecedor Excluído com Sucesso!");
 
 		} catch (SQLException e) {
-			JSFUtil.adicionarMensagemErro("N�o � possivel excluir um fornecedor com produto associado a ele");
+			JSFUtil.adicionarMensagemErro("Não foi possivel excluir um fornecedor com produto associado a ele");
 			e.printStackTrace();
 		}
 	}

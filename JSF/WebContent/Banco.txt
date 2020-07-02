@@ -1,0 +1,22 @@
+CREATE DATABASE bancodupla;
+USE bancodupla;
+
+CREATE TABLE fornecedores(
+  codigo INT NOT NULL AUTO_INCREMENT,
+  descricao VARCHAR(45) NOT NULL,
+  telefone INT NOT NULL,
+  email VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`codigo`)
+  );
+
+CREATE TABLE produtos (
+  codigo INT NOT NULL AUTO_INCREMENT,
+  descricao VARCHAR(45) NOT NULL,
+  quantidade INT NOT NULL,
+  valor DECIMAL(6,2) NOT NULL,
+  fornecedores_codigo INT NOT NULL,
+  PRIMARY KEY (`codigo`),
+    FOREIGN KEY (`fornecedores_codigo`)
+    REFERENCES fornecedores (`codigo`)
+);
+

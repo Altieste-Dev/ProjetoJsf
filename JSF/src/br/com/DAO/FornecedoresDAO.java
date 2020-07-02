@@ -16,6 +16,8 @@ public class FornecedoresDAO {
 		sql.append("INSERT INTO fornecedores ");
 		sql.append("(descricao) ");
 		sql.append("VALUES (?) ");
+		sql.append("(telefone)");
+		sql.append("(email)");
 
 		Connection conexao = ConnectionFactory.conectar();
 
@@ -48,6 +50,7 @@ public class FornecedoresDAO {
 		sql.append("UPDATE fornecedores ");
 		sql.append("SET descricao = ? ");
 		sql.append("WHERE codigo = ? ");
+		
 
 		Connection conexao = ConnectionFactory.conectar();
 
