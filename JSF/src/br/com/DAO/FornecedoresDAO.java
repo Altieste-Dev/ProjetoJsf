@@ -93,7 +93,7 @@ public class FornecedoresDAO {
 	public ArrayList<Fornecedores> listar() throws SQLException {
 
 		StringBuilder sql = new StringBuilder();
-		sql.append("SELECT codigo, descricao ");
+		sql.append("SELECT codigo, descricao, telefone, email ");
 		sql.append("FROM fornecedores ");
 		sql.append("ORDER BY descricao ASC ");
 
@@ -109,7 +109,9 @@ public class FornecedoresDAO {
 			Fornecedores f = new Fornecedores();
 			f.setCodigo(resultado.getInt("codigo"));
 			f.setDescricao(resultado.getString("descricao"));
-
+			f.setTelefone(resultado.getString("telefone"));
+			f.setEmail(resultado.getString("email"));
+			
 			lista.add(f);
 		}
 		return lista;
