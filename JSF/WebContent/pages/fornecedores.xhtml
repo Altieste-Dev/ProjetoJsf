@@ -64,7 +64,7 @@
 				</p:column>
 
 				<f:facet name="footer">
-					<p:commandButton value="Novo" oncomplete="PF('dlgfornovo').show();" 
+					<p:commandButton value="Novo Fornecedor" oncomplete="PF('dlgfornovo').show();" 
 					actionListener="#{MBFornecedores.prepararNovo}" update=":frmfornovo:pnfornovo"
 					/>
 				</f:facet>
@@ -82,22 +82,18 @@
 					<h:inputText size="30" maxlength="50" value="#{MBFornecedores.fornecedores.descricao}" 
 						required="true"
 						/>
-				</h:panelGrid>
-				
-				<h:panelGrid id="pnfornovo" columns="2">
+						
 					<p:outputLabel value="Telefone " />
 					<h:inputText size="30" maxlength="50" value="#{MBFornecedores.fornecedores.telefone}" 
 						required="true"
-						/>
-				</h:panelGrid>
-				
-				<h:panelGrid id="pnfornovo" columns="2">
-					<p:outputLabel value="E-mail " />
-					<h:inputText size="30" maxlength="50" value="#{MBFornecedores.fornecedores.email}" 
+						/>	
+					<p:outputLabel value="E-mail " />	
+						<h:inputText size="30" maxlength="50" value="#{MBFornecedores.fornecedores.email}" 
 						required="true"
 						/>
+					
 				</h:panelGrid>
-
+				
 				<h:panelGrid columns="2">
 					<p:commandButton value="Gravar" actionListener="#{MBFornecedores.novo}" 
 					oncomplete="PF('dlgfornovo').hide(); PF('tabelaFornecedores').clearFilters();" 
@@ -154,9 +150,11 @@
 					<h:inputText value="#{MBFornecedores.fornecedores.descricao}" 
 						required="true"/>
 						
+					<h:outputText value="Telefone" />
 					<h:inputText value="#{MBFornecedores.fornecedores.telefone}" 
 						required="true"/>
 						
+					<h:outputText value="E-mail" />	
 					<h:inputText value="#{MBFornecedores.fornecedores.email}" 
 						required="true"/>
 						

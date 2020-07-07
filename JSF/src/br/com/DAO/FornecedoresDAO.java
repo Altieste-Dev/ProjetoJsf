@@ -21,7 +21,7 @@ public class FornecedoresDAO {
 
 		PreparedStatement stmt = conexao.prepareStatement(sql.toString());
 		stmt.setString(1, fornecedor.getDescricao());
-		stmt.setLong(2, fornecedor.getTelefone());
+		stmt.setString(2, fornecedor.getTelefone());
 		stmt.setString(3, fornecedor.getEmail());
 
 		stmt.executeUpdate();
@@ -44,23 +44,22 @@ public class FornecedoresDAO {
 	}
 	
 	public void editar(Fornecedores f) throws SQLException {
-
+		
 		StringBuilder sql = new StringBuilder();
 		sql.append("UPDATE fornecedores ");
-		sql.append("SET descricao = ? ");
+		sql.append("SET descricao = ? , telefone = ?, email = ?");
 		sql.append("WHERE codigo = ? ");
-		
 
 		Connection conexao = ConnectionFactory.conectar();
 
 		PreparedStatement stmt = conexao.prepareStatement(sql.toString());
 
 		stmt.setString(1, f.getDescricao());
-
-		stmt.setInt(2, f.getCodigo());
+		stmt.setString(2, f.getTelefone());
+		stmt.setString(3, f.getEmail());
+		stmt.setInt(4, f.getCodigo());
 
 		stmt.executeUpdate();
-
 	}
 	
 	public Fornecedores buscaporcodigo(Fornecedores f) throws SQLException {

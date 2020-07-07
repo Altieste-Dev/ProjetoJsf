@@ -4,7 +4,7 @@ public class Fornecedores {
 	
 	private int codigo;
 	private String descricao;
-	private int telefone;
+	private String telefone;
 	private String email;
 	
 	public int getCodigo() {
@@ -13,29 +13,30 @@ public class Fornecedores {
 	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
+	
 	public String getDescricao() {
 		return descricao;
 	}
-	public void setDescricao(String telefone) {
+	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
-	public int getTelefone() {
+	public String getTelefone() {
 		return telefone;
 	}
-	public void setTelefone(int telefone) {
+	public void setTelefone(String telefone) {
 		this.telefone = telefone;
-	}
-	
-	@Override
-	public String toString() {
-		String saida = codigo + " - " + descricao;
-		return saida;
 	}
 	public String getEmail() {
 		return email;
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+	@Override
+	public String toString() {
+		String saida = codigo + " - " + descricao;
+		return saida;
 	}
 
 }
