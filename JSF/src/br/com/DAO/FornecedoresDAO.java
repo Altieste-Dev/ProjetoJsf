@@ -14,20 +14,19 @@ public class FornecedoresDAO {
 
 		StringBuilder sql = new StringBuilder();
 		sql.append("INSERT INTO fornecedores ");
-		sql.append("(descricao) ");
-		sql.append("VALUES (?) ");
-		sql.append("(telefone)");
-		sql.append("(email)");
+		sql.append("(descricao, telefone, email) ");
+		sql.append("VALUES (?, ?, ?) ");
 
 		Connection conexao = ConnectionFactory.conectar();
 
 		PreparedStatement stmt = conexao.prepareStatement(sql.toString());
 		stmt.setString(1, fornecedor.getDescricao());
+		stmt.setLong(2, fornecedor.getTelefone());
+		stmt.setString(3, fornecedor.getEmail());
 
 		stmt.executeUpdate();
 
-	}
-	
+	}	
 	public void excluir(Fornecedores f) throws SQLException {
 
 		StringBuilder sql = new StringBuilder();

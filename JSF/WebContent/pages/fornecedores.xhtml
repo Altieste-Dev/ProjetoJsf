@@ -35,6 +35,15 @@
 					<h:outputText value="#{item.descricao}" />
 				</p:column>
 			
+				<p:column headerText="Telefone" sortBy="#{item.telefone}"
+					filterBy="#{item.telefone}">
+					<h:outputText value="#{item.telefone}" />
+				</p:column>
+				
+				<p:column headerText="E-mail" sortBy="#{item.email}"
+					filterBy="#{item.email}">
+					<h:outputText value="#{item.email}" />
+				</p:column>
 				
 				<p:column headerText="Opções">
 				
@@ -63,11 +72,6 @@
 			</p:dataTable>
 		</h:form>
 		
-		
-		
-		
-		
-				
 
 		<p:dialog widgetVar="dlgfornovo" closable="false" draggable="false"
 			resizable="false" header="Cadastrar Fornecedor" modal="true"
@@ -76,6 +80,20 @@
 				<h:panelGrid id="pnfornovo" columns="2">
 					<p:outputLabel value="Descrição: " />
 					<h:inputText size="30" maxlength="50" value="#{MBFornecedores.fornecedores.descricao}" 
+						required="true"
+						/>
+				</h:panelGrid>
+				
+				<h:panelGrid id="pnfornovo" columns="2">
+					<p:outputLabel value="Telefone " />
+					<h:inputText size="30" maxlength="50" value="#{MBFornecedores.fornecedores.telefone}" 
+						required="true"
+						/>
+				</h:panelGrid>
+				
+				<h:panelGrid id="pnfornovo" columns="2">
+					<p:outputLabel value="E-mail " />
+					<h:inputText size="30" maxlength="50" value="#{MBFornecedores.fornecedores.email}" 
 						required="true"
 						/>
 				</h:panelGrid>
@@ -104,6 +122,9 @@
 					<h:outputText value="#{MBFornecedores.fornecedores.codigo}" />
 					
 					<h:outputText value="Descrição: " />
+					<h:outputText value="#{MBFornecedores.fornecedores.descricao}" />
+					
+					<h:outputText value="Telefone " />
 					<h:outputText value="#{MBFornecedores.fornecedores.descricao}" />					
 				</h:panelGrid>
 
