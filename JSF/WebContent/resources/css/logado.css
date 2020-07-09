@@ -1,0 +1,384 @@
+
+body {
+    background-image: url(../../img/anfield.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    color: #2f3138;
+    font-family: "Open Sans", sans-serif;
+}
+
+
+
+/*--------------------------------------------------------------
+# About Section
+--------------------------------------------------------------*/
+
+#about:before {
+    content: "";
+    background: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+#about h2 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+#about h3 {
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 2);
+}
+
+#about p {
+    font-size: 12px;
+    margin-bottom: 20px;
+    color: #fff;
+    text-align: justify;
+    padding-top: 20px;
+}
+
+
+
+*{
+    margin: 0;
+    padding: 0 0 0 10px;
+}
+   div.cssbox {
+    display: inline-block;
+  }
+
+
+  div.area{
+    width: 880px;
+    list-style:none;
+    display: flex;
+    margin: 100px auto;
+  }
+
+
+img.cssbox_thumb{
+    list-style:none;
+    margin: 100px auto;
+    transition: .3s transform ease;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+
+img.cssbox_thumb:hover{
+    -webkit-transform: scale(1.02);
+    transform: scale(1.08);
+}
+
+  span.cssbox_full {
+    z-index: 999;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.8);
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    cursor: default;
+    transition: opacity 0.5s linear;
+  }
+  
+  span.cssbox_full img {
+    position: fixed;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    max-height: 90%;
+    max-width: 90%;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 20px black;
+  }
+  
+
+
+
+  a.cssbox_close,
+  a.cssbox_prev,
+  a.cssbox_next {
+    z-index: 999;
+    position: fixed;
+    text-decoration: none;
+    visibility: hidden;
+    color: white;
+    font-size: 36px;
+  }
+  
+  a.cssbox_close {
+    top: 1%;
+    right: 1%
+  }
+  
+  a.cssbox_close::after {
+    content: '\00d7';
+  }
+  
+  a.cssbox_prev,
+  a.cssbox_next {
+    top: 50%;
+    transform: translate(0%, -50%);
+  }
+  
+  a.cssbox_prev {
+    left: 5%;
+  }
+  
+  a.cssbox_next {
+    right: 5%;
+  }
+  
+  a:target ~ a.cssbox_close,
+  a:target ~ a.cssbox_prev,
+  a:target ~ a.cssbox_next {
+    visibility: visible;
+  }
+  
+  a:target > img.cssbox_thumb + span.cssbox_full {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: initial;
+  }
+ 
+ 
+  /*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+
+#header {
+  height: 90px;
+  padding: 25px 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  transition: all 0.5s;
+  z-index: 997;
+}
+
+#header.header-scrolled,
+#header.header-fixed {
+  background: rgba(0, 0, 0, 0.2);
+  height: 70px;
+  padding: 15px 0;
+  transition: all 0.5s;
+}
+
+#header #logo h1 {
+  font-size: 36px;
+  margin: 0;
+  padding: 6px 0;
+  line-height: 1;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+#header #logo h1 span {
+  color: #ffcc33;
+}
+
+#header #logo h1 a,
+#header #logo h1 a:hover {
+  color: #fff;
+}
+
+#header #logo img {
+  padding: 0;
+  margin: 0;
+  max-height: 40px;
+}
+
+#header .container {
+  max-width: 100%;
+  margin: auto;
+  margin: auto;
+}
+
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+
+
+/* Nav Menu Essentials */
+
+.nav-menu,
+.nav-menu * {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-menu ul {
+    position: absolute;
+    display: none;
+    top: 100%;
+    left: 0;
+    z-index: 99;
+}
+
+.nav-menu li {
+    position: relative;
+    white-space: nowrap;
+}
+
+.nav-menu>li {
+    float: left;
+}
+
+.nav-menu li:hover>ul,
+.nav-menu li.sfHover>ul {
+    display: block;
+}
+
+.nav-menu ul ul {
+    top: 0;
+    left: 100%;
+}
+
+.nav-menu ul li {
+    min-width: 180px;
+}
+
+
+/* Nav Menu Arrows */
+
+.sf-arrows .sf-with-ul {
+    padding-right: 30px;
+}
+
+.sf-arrows .sf-with-ul:after {
+    content: "\f107";
+    position: absolute;
+    right: 15px;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.sf-arrows ul .sf-with-ul:after {
+    content: "\f105";
+}
+
+
+/* Nav Meu Container */
+
+#nav-menu-container {
+    float: right;
+    margin: 0;
+}
+
+
+/* Nav Meu Styling */
+
+.nav-menu a {
+    padding: 8px;
+    text-decoration: none;
+    display: inline-block;
+    color: rgba(96, 100, 112, 0.8);
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    outline: none;
+}
+
+.nav-menu .menu-active a,
+.nav-menu a:hover {
+    color: #fff;
+}
+
+.nav-menu>li {
+    margin-left: 8px;
+}
+
+.nav-menu>li>a:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ffcc33;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.nav-menu a:hover:before,
+.nav-menu li:hover>a:before,
+.nav-menu .menu-active>a:before {
+    visibility: visible;
+    width: 100%;
+}
+
+.nav-menu li.buy-tickets a {
+    color: #fff;
+    background: #ffcc33;
+    padding: 7px 22px;
+    border-radius: 50px;
+    border: 2px solid #ffcc33;
+    transition: all ease-in-out 0.3s;
+    font-weight: 500;
+    margin-left: 8px;
+    margin-top: 2px;
+    line-height: 1;
+    font-size: 13px;
+}
+
+.nav-menu li.buy-tickets a:hover {
+    background: #b21534;
+}
+
+.nav-menu li.buy-tickets:hover a:before,
+.nav-menu li.buy-tickets.menu-active a:before {
+    visibility: hidden;
+}
+
+.nav-menu ul {
+    margin: 4px 0 0 0;
+    padding: 10px;
+    box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.25);
+    background: #fff;
+    border-radius: 3px;
+}
+
+.nav-menu ul li {
+    transition: 0.3s;
+}
+
+.nav-menu ul li a {
+    padding: 10px;
+    color: #b21534;
+    transition: 0.3s;
+    display: block;
+    font-size: 13px;
+    text-transform: none;
+    border-radius: 3px;
+}
+
+.nav-menu ul li:hover>a {
+    background: #ffcc33;
+    color: #fff;
+}
+
+.nav-menu ul ul {
+    margin: 0;
+}
